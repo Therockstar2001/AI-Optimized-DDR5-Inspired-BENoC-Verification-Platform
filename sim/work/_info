@@ -1,0 +1,521 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2_1 2021.05, May 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/sashank/ddr5_benoc_project/sim
+T_opt
+!s110 1779640028
+VTFRWKFzbGi8NDCV`U2Q6X2
+Z2 04 6 4 work top_tb fast 0
+=1-000ae431a4f1-6a1326dc-63d30-611
+Z3 !s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2_1;73
+R1
+T_opt1
+!s110 1780454045
+Vd6OA1bD`iJKL1GTjBIZ2D2
+R2
+=1-000ae431a4f1-6a1f929d-5fc8-6a61
+R3
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+T_opt2
+!s110 1780092459
+V7n4?aEd6T>=f@cBSCEe4B3
+R2
+=1-000ae431a4f1-6a1a0e2b-1fcb9-2a0f
+R3
+o-quiet -auto_acc_if_foreign -work work -debugdb +acc
+R4
+n@_opt2
+R5
+R1
+vbenoc_arbiter
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z7 !s110 1780454034
+!i10b 1
+!s100 8CTf5EG5?R@>]Q_6=@iED1
+I:fIgXFlZjhnYJRVCV>_5Z0
+S1
+R1
+w1779654638
+8../rtl/benoc_arbiter.sv
+F../rtl/benoc_arbiter.sv
+!i122 56
+L0 1 46
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z10 !s108 1780454034.000000
+Z11 !s107 ../tb/top_tb.sv|../tb/benoc_perf_monitor.sv|../tb/traffic_txn.sv|../tb/benoc_coverage.sv|../tb/benoc_scoreboard.sv|../sva/benoc_assertions.sv|../rtl/memory_model.sv|../rtl/ddr64_ctrl.sv|../rtl/crc8.sv|../rtl/benoc_skid_buffer.sv|../rtl/benoc_fabric.sv|../rtl/benoc_arbiter.sv|../rtl/ddr_if.sv|../rtl/benoc_if.sv|../rtl/benoc_pkg.sv|
+Z12 !s90 -reportprogress|300|-cover|bcestf|-sv|-f|filelist.f|
+!i113 0
+Z13 !s102 -cover bcestf
+Z14 o-cover bcestf -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vbenoc_assertions
+R6
+R7
+!i10b 1
+!s100 VBXI<L1hd=Z^l^Sgd;VSU0
+IleT>H=6U6izb8eSnlPWTX1
+S1
+R1
+w1780087107
+8../sva/benoc_assertions.sv
+F../sva/benoc_assertions.sv
+!i122 56
+L0 1 106
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vbenoc_coverage
+R6
+Z15 DXx4 work 9 benoc_pkg 0 22 _UefB`L45KJFlkQkgOco>1
+R7
+!i10b 1
+!s100 P<gdC?]M7<>o68YY;T;@k2
+Id6X4P1D`;:n:dPI_UXmdm1
+S1
+R1
+w1779936379
+8../tb/benoc_coverage.sv
+F../tb/benoc_coverage.sv
+!i122 56
+L0 1 76
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vbenoc_fabric
+R6
+R15
+R7
+!i10b 1
+!s100 :zjHUXIKc^;]1LJkZ>iU63
+I56NUE8:??YIQ7W]m1Vo602
+S1
+R1
+w1779639678
+8../rtl/benoc_fabric.sv
+F../rtl/benoc_fabric.sv
+!i122 56
+L0 1 139
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Ybenoc_if
+R6
+R15
+R7
+!i10b 1
+!s100 c85YIM;MYM[@R_PH7RAkZ3
+IK6FB1P6U7Rg[afX<DkSdB0
+S1
+R1
+w1779636054
+8../rtl/benoc_if.sv
+F../rtl/benoc_if.sv
+!i122 56
+Z16 L0 1 0
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vbenoc_perf_monitor
+R6
+R7
+!i10b 1
+!s100 ]fXEoi9hKl9PNK8OAAzF03
+Iz8d?l<8890`M]2eD9X;H:0
+S1
+R1
+w1779993996
+8../tb/benoc_perf_monitor.sv
+F../tb/benoc_perf_monitor.sv
+!i122 56
+L0 1 134
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Xbenoc_pkg
+R6
+R7
+!i10b 1
+!s100 ^oKfR4S_ZdOhCJCzN=Y?M0
+I_UefB`L45KJFlkQkgOco>1
+S1
+R1
+w1779635895
+8../rtl/benoc_pkg.sv
+F../rtl/benoc_pkg.sv
+!i122 56
+R16
+V_UefB`L45KJFlkQkgOco>1
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vbenoc_scoreboard
+R6
+R15
+R7
+!i10b 1
+!s100 TZ2Sg^17mcb0ZggD=9ldS2
+IOO[^5?2V@zlACWddgcib;0
+S1
+R1
+w1779935102
+8../tb/benoc_scoreboard.sv
+F../tb/benoc_scoreboard.sv
+!i122 56
+L0 1 54
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vbenoc_skid_buffer
+R6
+R15
+R7
+!i10b 1
+!s100 ZWUhZSHL8_T5_2V;4_8IN3
+I=VFCUcVofnSADFDGnnk;i2
+S1
+R1
+w1779668434
+8../rtl/benoc_skid_buffer.sv
+F../rtl/benoc_skid_buffer.sv
+!i122 56
+L0 1 51
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vcrc8
+R6
+R7
+!i10b 1
+!s100 ]Dk=GXo6QaAzAXcLAYfN81
+IU?KD>D;57HX_PcKH10:QV2
+S1
+R1
+w1779997397
+8../rtl/crc8.sv
+F../rtl/crc8.sv
+!i122 56
+L0 1 19
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vddr64_ctrl
+R6
+R15
+R7
+!i10b 1
+!s100 ZN9GP3YoXOM0c@69?ma952
+I1e5637BhJEozdgMRkVniZ0
+S1
+R1
+w1780077571
+8../rtl/ddr64_ctrl.sv
+F../rtl/ddr64_ctrl.sv
+!i122 56
+L0 1 136
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Yddr_if
+R6
+R7
+!i10b 1
+!s100 Yf4f7@2XG3^m?e0@:bBzF1
+Iga_g:N3K3TL0jH_e>0aRT1
+S1
+R1
+w1779636103
+8../rtl/ddr_if.sv
+F../rtl/ddr_if.sv
+!i122 56
+R16
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vmemory_model
+R6
+R7
+!i10b 1
+!s100 c^F?j@biT3Eklo8MP0boK3
+IVkARdjegh@8=16?a?9DT^3
+S1
+R1
+w1779999085
+8../rtl/memory_model.sv
+F../rtl/memory_model.sv
+!i122 56
+L0 1 89
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+vtop_tb
+R6
+R6
+R15
+Z17 DXx4 work 11 traffic_pkg 0 22 n<ZD]Eo9SQnW>ATobhIHl1
+DXx4 work 14 top_tb_sv_unit 0 22 L^Q_0PGYLkTl@0hcNAM6U2
+R7
+R8
+r1
+!s85 0
+!i10b 1
+!s100 cC@?T9PzbGJahTEOF01zd2
+I38W:YNIhoR2A^250WO[cM3
+!s105 top_tb_sv_unit
+S1
+R1
+Z18 w1780454010
+Z19 8../tb/top_tb.sv
+Z20 F../tb/top_tb.sv
+!i122 56
+L0 4 810
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Xtop_tb_sv_unit
+R6
+R6
+R15
+R17
+R7
+VL^Q_0PGYLkTl@0hcNAM6U2
+r1
+!s85 0
+!i10b 1
+!s100 [<NF1oaB5o]9TY1PE<k9Z1
+IL^Q_0PGYLkTl@0hcNAM6U2
+!i103 1
+S1
+R1
+R18
+R19
+R20
+!i122 56
+L0 2 0
+R9
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Xtraffic_pkg
+R6
+R15
+R7
+!i10b 1
+!s100 <;f4nH[ef6iJR4aTJ;;]d2
+In<ZD]Eo9SQnW>ATobhIHl1
+S1
+R1
+w1780082499
+Z21 8../tb/traffic_txn.sv
+Z22 F../tb/traffic_txn.sv
+!i122 56
+R16
+Vn<ZD]Eo9SQnW>ATobhIHl1
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R14
+R4
+Xtraffic_txn_sv_unit
+R6
+R6
+R15
+!s110 1779995233
+V:9:DF9CQjJXm@5W<I4zB<2
+r1
+!s85 0
+!i10b 1
+!s100 ;PT6WfYYz`[1MV^n3:X8T0
+I:9:DF9CQjJXm@5W<I4zB<2
+!i103 1
+S1
+R1
+w1779994703
+R21
+R22
+!i122 29
+R16
+R9
+31
+!s108 1779995233.000000
+!s107 ../tb/top_tb.sv|../tb/benoc_perf_monitor.sv|../tb/traffic_txn.sv|../tb/benoc_coverage.sv|../tb/benoc_scoreboard.sv|../sva/benoc_assertions.sv|../rtl/memory_model.sv|../rtl/ddr64_ctrl.sv|../rtl/benoc_skid_buffer.sv|../rtl/benoc_fabric.sv|../rtl/benoc_arbiter.sv|../rtl/ddr_if.sv|../rtl/benoc_if.sv|../rtl/benoc_pkg.sv|
+R12
+!i113 0
+R13
+R14
+R4

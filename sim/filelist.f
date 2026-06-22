@@ -1,0 +1,15 @@
+../rtl/benoc_pkg.sv
+../rtl/benoc_if.sv
+../rtl/ddr_if.sv
+../rtl/benoc_arbiter.sv
+../rtl/benoc_fabric.sv
+../rtl/benoc_skid_buffer.sv
+../rtl/crc8.sv
+../rtl/ddr64_ctrl.sv
+../rtl/memory_model.sv
+../sva/benoc_assertions.sv
+../tb/benoc_scoreboard.sv
+../tb/benoc_coverage.sv
+../tb/traffic_txn.sv
+../tb/benoc_perf_monitor.sv
+../tb/top_tb.sv

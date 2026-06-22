@@ -1,0 +1,106 @@
+module benoc_assertions (
+  input logic clk,
+  input logic rst_n,
+
+  benoc_if.monitor cpu_if,
+  benoc_if.monitor ai_if,
+  benoc_if.monitor fabric_skid_if,
+  benoc_if.monitor skid_ddr_if
+);
+
+  // ----------------------------
+  // VALID must hold until READY
+  // ----------------------------
+
+  property p_cpu_valid_hold;
+    @(posedge clk) disable iff (!rst_n)
+      cpu_if.req_valid && !cpu_if.req_ready
+      |=> cpu_if.req_valid;
+  endproperty
+
+  assert property (p_cpu_valid_hold)
+    else $error("CPU req_valid dropped before req_ready");
+
+  property p_ai_valid_hold;
+    @(posedge clk) disable iff (!rst_n)
+      ai_if.req_valid && !ai_if.req_ready
+      |=> ai_if.req_valid;
+  endproperty
+
+  assert property (p_ai_valid_hold)
+    else $error("AI req_valid dropped before req_ready");
+
+  // ----------------------------
+  // Packet must stay stable under backpressure
+  // ----------------------------
+
+  property p_cpu_pkt_stable;
+    @(posedge clk) disable iff (!rst_n)
+      cpu_if.req_valid && !cpu_if.req_ready
+      |=> $stable(cpu_if.req_pkt);
+  endproperty
+
+  assert property (p_cpu_pkt_stable)
+    else $error("CPU req_pkt changed while waiting for ready");
+
+  property p_ai_pkt_stable;
+    @(posedge clk) disable iff (!rst_n)
+      ai_if.req_valid && !ai_if.req_ready
+      |=> $stable(ai_if.req_pkt);
+  endproperty
+
+  assert property (p_ai_pkt_stable)
+    else $error("AI req_pkt changed while waiting for ready");
+
+  // ----------------------------
+  // Skid buffer output valid must imply stored request
+  // ----------------------------
+
+  property p_skid_valid_forward;
+    @(posedge clk) disable iff (!rst_n)
+      fabric_skid_if.req_valid && fabric_skid_if.req_ready
+      |=> skid_ddr_if.req_valid;
+  endproperty
+
+  assert property (p_skid_valid_forward)
+    else $error("Skid buffer did not forward captured request");
+
+  // --------------------------------------------------
+  // Bounded response / starvation checks
+  // If a request is accepted, a response must return
+  // within MAX_LATENCY cycles.
+  // --------------------------------------------------
+
+  parameter int MAX_RSP_LATENCY = 32;
+
+  property p_cpu_req_eventual_rsp;
+    @(posedge clk) disable iff (!rst_n)
+      (cpu_if.req_valid && cpu_if.req_ready)
+      |-> ##[1:MAX_RSP_LATENCY] cpu_if.rsp_valid;
+  endproperty
+
+  property p_ai_req_eventual_rsp;
+    @(posedge clk) disable iff (!rst_n)
+      (ai_if.req_valid && ai_if.req_ready)
+      |-> ##[1:MAX_RSP_LATENCY] ai_if.rsp_valid;
+  endproperty
+
+  property p_fabric_req_eventual_ddr_accept;
+    @(posedge clk) disable iff (!rst_n)
+      (fabric_skid_if.req_valid)
+      |-> ##[1:MAX_RSP_LATENCY] skid_ddr_if.req_valid;
+  endproperty
+
+  assert property (p_cpu_req_eventual_rsp)
+    else $error("[SVA FAIL] CPU request did not receive response within %0d cycles",
+              MAX_RSP_LATENCY);
+
+  assert property (p_ai_req_eventual_rsp)
+    else $error("[SVA FAIL] AI request did not receive response within %0d cycles",
+              MAX_RSP_LATENCY);
+
+  assert property (p_fabric_req_eventual_ddr_accept)
+    else $error("[SVA FAIL] Fabric request did not reach DDR path within %0d cycles",
+              MAX_RSP_LATENCY);
+
+endmodule

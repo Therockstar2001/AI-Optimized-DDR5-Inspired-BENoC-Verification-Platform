@@ -1,0 +1,39 @@
+module benoc_arbiter #(
+  parameter int NUM_MASTERS = 4
+)(
+  input  logic                         clk,
+  input  logic                         rst_n,
+
+  input  logic [NUM_MASTERS-1:0]       req_valid,
+  input  var logic [1:0]                   req_qos [NUM_MASTERS],
+
+  output logic [NUM_MASTERS-1:0]       grant,
+  output logic [$clog2(NUM_MASTERS)-1:0] grant_id,
+  output logic                         grant_valid
+);
+
+  integer i;
+  logic [1:0] best_qos;
+
+  always_comb begin
+    grant       = '0;
+    grant_id    = '0;
+    grant_valid = 1'b0;
+    best_qos    = 2'b00;
+
+    for (i = 0; i < NUM_MASTERS; i++) begin
+      if (req_valid[i]) begin
+        if (!grant_valid || (req_qos[i] > best_qos)) begin
+          best_qos    = req_qos[i];
+          grant_id    = i[$clog2(NUM_MASTERS)-1:0];
+          grant_valid = 1'b1;
+        end
+      end
+    end
+
+    if (grant_valid) begin
+      grant[grant_id] = 1'b1;
+    end
+  end
+
+endmodule

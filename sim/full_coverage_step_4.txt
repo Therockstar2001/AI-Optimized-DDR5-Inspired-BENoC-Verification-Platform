@@ -1,0 +1,2185 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top_tb/cpu_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       310        54    85.16%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/cpu_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DMA           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                               req_pkt.addr[30-29]           0           1                               50.00 
+                               req_pkt.addr[27-16]           0           1                               50.00 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                              req_pkt.burst_len[7]           0           0                                0.00 
+                              req_pkt.burst_len[6]           0           1                               50.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DMA           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                     rsp_pkt.error           0           0                                0.00 
+                                 rsp_pkt.rdata[56]           0           0                                0.00 
+                                 rsp_pkt.rdata[54]           0           0                                0.00 
+                                 rsp_pkt.rdata[52]           0           0                                0.00 
+                                 rsp_pkt.rdata[38]           0           0                                0.00 
+                                 rsp_pkt.rdata[29]           0           0                                0.00 
+                                 rsp_pkt.rdata[24]           0           0                                0.00 
+                                 rsp_pkt.rdata[20]           0           0                                0.00 
+                                 rsp_pkt.rdata[17]           0           0                                0.00 
+                                 rsp_pkt.rdata[13]           0           0                                0.00 
+                                  rsp_pkt.rdata[1]           0           0                                0.00 
+                                         rsp_ready           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =        151 
+Untoggled Node Count =         38 
+
+Toggle Coverage      =      85.16% (310 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/ai_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       188       176    51.64%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/ai_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                                                   SRC_DMA           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                                  req_pkt.addr[30]           0           1                               50.00 
+                                  req_pkt.addr[29]           0           0                                0.00 
+                               req_pkt.addr[27-16]           0           0                                0.00 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                            req_pkt.burst_len[7-5]           0           0                                0.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                                                   SRC_DMA           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                     rsp_pkt.error           0           0                                0.00 
+                               rsp_pkt.rdata[63-0]           0           0                                0.00 
+                                         rsp_ready           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =         98 
+Untoggled Node Count =         91 
+
+Toggle Coverage      =      51.64% (188 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/dma_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       190       174    52.19%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/dma_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                               req_pkt.addr[30-29]           0           1                               50.00 
+                               req_pkt.addr[27-16]           0           0                                0.00 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                            req_pkt.burst_len[7-6]           0           0                                0.00 
+                              req_pkt.burst_len[5]           0           1                               50.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DBG           0        0.00 
+                                     rsp_pkt.error           0           0                                0.00 
+                               rsp_pkt.rdata[63-0]           0           0                                0.00 
+                                         rsp_ready           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =         98 
+Untoggled Node Count =         91 
+
+Toggle Coverage      =      52.19% (190 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/dbg_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       202       162    55.49%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/dbg_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DMA           0        0.00 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                               req_pkt.addr[30-29]           0           1                               50.00 
+                               req_pkt.addr[27-16]           0           1                               50.00 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                              req_pkt.burst_len[7]           0           0                                0.00 
+                              req_pkt.burst_len[6]           0           1                               50.00 
+                              req_pkt.burst_len[5]           0           0                                0.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                                                    SRC_AI           0        0.00 
+                                                                   SRC_DMA           0        0.00 
+                                     rsp_pkt.error           0           0                                0.00 
+                               rsp_pkt.rdata[63-0]           0           0                                0.00 
+                                         rsp_ready           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =         98 
+Untoggled Node Count =         91 
+
+Toggle Coverage      =      55.49% (202 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/fabric_skid_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       333        31    91.48%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/fabric_skid_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                              req_pkt.burst_len[7]           0           0                                0.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                     rsp_pkt.error           0           0                                0.00 
+                                 rsp_pkt.rdata[56]           0           0                                0.00 
+                                 rsp_pkt.rdata[54]           0           0                                0.00 
+                                 rsp_pkt.rdata[52]           0           0                                0.00 
+                                 rsp_pkt.rdata[38]           0           0                                0.00 
+                                 rsp_pkt.rdata[29]           0           0                                0.00 
+                                 rsp_pkt.rdata[24]           0           0                                0.00 
+                                 rsp_pkt.rdata[20]           0           0                                0.00 
+                                 rsp_pkt.rdata[17]           0           0                                0.00 
+                                 rsp_pkt.rdata[13]           0           0                                0.00 
+                                  rsp_pkt.rdata[1]           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =        173 
+Untoggled Node Count =         16 
+
+Toggle Coverage      =      91.48% (333 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/skid_ddr_if
+=== Design Unit: work.benoc_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        364       318        46    87.36%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/skid_ddr_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                    req_pkt.src_id               ENUM type       Value       Count 
+                                       req_pkt.qos               ENUM type       Value       Count 
+                                       req_pkt.cmd               ENUM type       Value       Count 
+                               req_pkt.addr[30-29]           0           1                               50.00 
+                               req_pkt.addr[27-16]           0           1                               50.00 
+                                 req_pkt.addr[2-0]           0           0                                0.00 
+                              req_pkt.burst_len[7]           0           0                                0.00 
+                              req_pkt.burst_len[6]           0           1                               50.00 
+                                    rsp_pkt.src_id               ENUM type       Value       Count 
+                                     rsp_pkt.error           0           0                                0.00 
+                                 rsp_pkt.rdata[56]           0           0                                0.00 
+                                 rsp_pkt.rdata[54]           0           0                                0.00 
+                                 rsp_pkt.rdata[52]           0           0                                0.00 
+                                 rsp_pkt.rdata[38]           0           0                                0.00 
+                                 rsp_pkt.rdata[29]           0           0                                0.00 
+                                 rsp_pkt.rdata[24]           0           0                                0.00 
+                                 rsp_pkt.rdata[20]           0           0                                0.00 
+                                 rsp_pkt.rdata[17]           0           0                                0.00 
+                                 rsp_pkt.rdata[13]           0           0                                0.00 
+                                  rsp_pkt.rdata[1]           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        189 
+Toggled Node Count   =        158 
+Untoggled Node Count =         31 
+
+Toggle Coverage      =      87.36% (318 of 364 bins)
+
+=================================================================================
+=== Instance: /top_tb/mem_if
+=== Design Unit: work.ddr_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        392       313        79    79.84%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/mem_if --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                      burst_len[7]           0           0                                0.00 
+                                     cmd_addr[2-0]           0           0                                0.00 
+                                   freq_ratio[1-0]           0           0                                0.00 
+                                       rd_crc[7-0]           0           0                                0.00 
+                                       rd_data[63]           0           1                               50.00 
+                                       rd_data[59]           0           1                               50.00 
+                                       rd_data[57]           0           1                               50.00 
+                                       rd_data[56]           0           0                                0.00 
+                                       rd_data[55]           0           1                               50.00 
+                                       rd_data[54]           0           0                                0.00 
+                                       rd_data[53]           0           1                               50.00 
+                                       rd_data[52]           0           0                                0.00 
+                                       rd_data[51]           0           1                               50.00 
+                                       rd_data[47]           0           1                               50.00 
+                                    rd_data[44-43]           0           1                               50.00 
+                                       rd_data[41]           0           1                               50.00 
+                                       rd_data[39]           0           1                               50.00 
+                                       rd_data[38]           0           0                                0.00 
+                                       rd_data[37]           0           1                               50.00 
+                                       rd_data[35]           0           1                               50.00 
+                                    rd_data[32-30]           0           1                               50.00 
+                                       rd_data[29]           0           0                                0.00 
+                                    rd_data[27-26]           0           1                               50.00 
+                                       rd_data[24]           0           0                                0.00 
+                                       rd_data[23]           0           1                               50.00 
+                                       rd_data[20]           0           0                                0.00 
+                                    rd_data[19-18]           0           1                               50.00 
+                                       rd_data[17]           0           0                                0.00 
+                                    rd_data[15-14]           0           1                               50.00 
+                                       rd_data[13]           0           0                                0.00 
+                                    rd_data[12-10]           0           1                               50.00 
+                                        rd_data[7]           0           1                               50.00 
+                                      rd_data[3-2]           0           1                               50.00 
+                                        rd_data[1]           0           0                                0.00 
+                                        rd_data[0]           0           1                               50.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        196 
+Toggled Node Count   =        141 
+Untoggled Node Count =         55 
+
+Toggle Coverage      =      79.84% (313 of 392 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_fabric/u_arbiter
+=== Design Unit: work.benoc_arbiter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         7         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_fabric/u_arbiter
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_arbiter.sv
+------------------------------------IF Branch------------------------------------
+    27                                       684     Count coming in to IF
+    27              1                         86     
+                                             598     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                       171     Count coming in to IF
+    33              1                         86     
+                                              85     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                       171     Count coming in to IF
+    39              1                          2     
+    41              1                         86     
+                                              83     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_fabric/u_arbiter --
+
+  File ../rtl/benoc_arbiter.sv
+----------------Focused Condition View-------------------
+Line       27 Item    1  (~grant_valid && req_valid[idx])
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        13         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_fabric/u_arbiter --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_arbiter.sv
+    19              1                        171     
+    20              1                        171     
+    21              1                        171     
+    22              1                        171     
+    24              1                        171     
+    24              2                        684     
+    25              1                        684     
+    28              1                         86     
+    29              1                         86     
+    34              1                         86     
+    38              1                        171     
+    40              1                          2     
+    42              1                         86     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        158        33       125    20.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_fabric/u_arbiter --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                         idx[31-2]           0           0                                0.00 
+                                           k[31-0]           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =         79 
+Toggled Node Count   =         16 
+Untoggled Node Count =         63 
+
+Toggle Coverage      =      20.88% (33 of 158 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_fabric
+=== Design Unit: work.benoc_fabric
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        19         1    95.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_fabric
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_fabric.sv
+------------------------------------CASE Branch------------------------------------
+    53                                       421     Count coming in to CASE
+    54              1                        118     
+    62              1                        109     
+    70              1                         93     
+    78              1                         98     
+    86              1                          3     
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    55                                       118     Count coming in to IF
+    55              1                         50     
+                                              68     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                       109     Count coming in to IF
+    63              1                         41     
+                                              68     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    71                                        93     Count coming in to IF
+    71              1                         36     
+                                              57     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                        98     Count coming in to IF
+    79              1                         44     
+                                              54     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                      172     Count coming in to IF
+    106             1                         85     
+                                              87     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    107                                       85     Count coming in to CASE
+    108             1                         25     
+    114             1                         20     
+    120             1                         18     
+    126             1                         22     
+    132             1                    ***0***     
+Branch totals: 4 hits of 5 branches = 80.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      52        51         1    98.07%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_fabric --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_fabric.sv
+    22              1                         50     
+    23              1                         40     
+    24              1                         38     
+    25              1                         46     
+    27              1                         26     
+    28              1                         21     
+    29              1                         20     
+    30              1                         24     
+    44              1                        421     
+    45              1                        421     
+    46              1                        421     
+    48              1                        421     
+    49              1                        421     
+    50              1                        421     
+    51              1                        421     
+    56              1                         50     
+    57              1                         50     
+    58              1                         50     
+    64              1                         41     
+    65              1                         41     
+    66              1                         41     
+    72              1                         36     
+    73              1                         36     
+    74              1                         36     
+    80              1                         44     
+    81              1                         44     
+    82              1                         44     
+    87              1                          3     
+    88              1                          3     
+    93              1                        172     
+    94              1                        172     
+    95              1                        172     
+    96              1                        172     
+    97              1                        172     
+    99              1                        172     
+    100             1                        172     
+    101             1                        172     
+    102             1                        172     
+    104             1                        172     
+    109             1                         25     
+    110             1                         25     
+    111             1                         25     
+    115             1                         20     
+    116             1                         20     
+    117             1                         20     
+    121             1                         18     
+    122             1                         18     
+    123             1                         18     
+    127             1                         22     
+    128             1                         22     
+    129             1                         22     
+    133             1                    ***0***     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26        25         1    96.15%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_fabric --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =         13 
+Toggled Node Count   =         12 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      96.15% (25 of 26 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_skid_buffer
+=== Design Unit: work.benoc_skid_buffer
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         6         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_skid_buffer
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_skid_buffer.sv
+------------------------------------IF Branch------------------------------------
+    31                                       323     Count coming in to IF
+    31              1                          2     
+    35              1                        321     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                       321     Count coming in to IF
+    38              1                         85     
+                                             236     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                       321     Count coming in to IF
+    44              1                         85     
+                                             236     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         4         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_skid_buffer --
+
+  File ../rtl/benoc_skid_buffer.sv
+----------------Focused Condition View-------------------
+Line       38 Item    1  (in_if.req_valid && in_if.req_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       44 Item    1  (out_if.req_valid && out_if.req_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       9         9         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_skid_buffer --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/benoc_skid_buffer.sv
+    25              1                        172     
+    27              1                        259     
+    28              1                        195     
+    30              1                        323     
+    32              1                          2     
+    33              1                          2     
+    39              1                         85     
+    40              1                         85     
+    45              1                         85     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        224       200        24    89.28%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_skid_buffer --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                      pkt_q.src_id               ENUM type       Value       Count 
+                                         pkt_q.qos               ENUM type       Value       Count 
+                                         pkt_q.cmd               ENUM type       Value       Count 
+                                 pkt_q.addr[30-29]           0           1                               50.00 
+                                 pkt_q.addr[27-16]           0           1                               50.00 
+                                   pkt_q.addr[2-0]           0           0                                0.00 
+                                pkt_q.burst_len[7]           0           0                                0.00 
+                                pkt_q.burst_len[6]           0           1                               50.00 
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =        117 
+Toggled Node Count   =         97 
+Untoggled Node Count =         20 
+
+Toggle Coverage      =      89.28% (200 of 224 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_ddr64_ctrl/u_crc8_wr
+=== Design Unit: work.crc8
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_ddr64_ctrl/u_crc8_wr --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/crc8.sv
+    9               1                         85     
+    10              1                         85     
+    12              1                         85     
+    12              2                       5440     
+    13              1                       5440     
+    16              1                         85     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        224       160        64    71.42%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_ddr64_ctrl/u_crc8_wr --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                           i[31-0]           0           0                                0.00 
+
+Total Node Count     =        112 
+Toggled Node Count   =         80 
+Untoggled Node Count =         32 
+
+Toggle Coverage      =      71.42% (160 of 224 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_ddr64_ctrl
+=== Design Unit: work.ddr64_ctrl
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        28        27         1    96.42%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_ddr64_ctrl
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/ddr64_ctrl.sv
+------------------------------------IF Branch------------------------------------
+    32                                       350     Count coming in to IF
+    32              1                          2     
+    37              1                        348     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                       348     Count coming in to IF
+    40              1                         85     
+                                             263     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                       348     Count coming in to IF
+    44              1                          4     
+                                             344     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    75                                       590     Count coming in to CASE
+    77              1                        253     
+    88              1                        150     
+    102             1                          5     
+    112             1                          8     
+    119             1                        172     
+    129             1                          2     
+Branch totals: 6 hits of 6 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                       253     Count coming in to IF
+    80              1                        104     
+                                             149     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                       104     Count coming in to IF
+    81              1                        100     
+    83              1                          4     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                       150     Count coming in to IF
+    96              1                          2     
+    96              2                        148     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    98                                       150     Count coming in to IF
+    98              1                        146     
+                                               4     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    108                                        5     Count coming in to IF
+    108             1                          5     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    115                                        8     Count coming in to IF
+    115             1                          4     
+                                               4     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    123                                      172     Count coming in to IF
+    123             1                          8     
+    123             2                        164     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    125                                      172     Count coming in to IF
+    125             1                         87     
+                                              85     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       8         6         2    75.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_ddr64_ctrl --
+
+  File ../rtl/ddr64_ctrl.sv
+----------------Focused Condition View-------------------
+Line       40 Item    1  (((state == S_IDLE) && benoc.req_valid) && benoc.req_ready)
+Condition totals: 2 of 3 input terms covered = 66.66%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (state == S_IDLE)         Y
+    benoc.req_valid         Y
+    benoc.req_ready         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  (state == S_IDLE)_0   -                             
+  Row   2:          1  (state == S_IDLE)_1   (benoc.req_ready && benoc.req_valid)
+  Row   3:          1  benoc.req_valid_0     (state == S_IDLE)             
+  Row   4:          1  benoc.req_valid_1     (benoc.req_ready && (state == S_IDLE))
+  Row   5:    ***0***  benoc.req_ready_0     ((state == S_IDLE) && benoc.req_valid)
+  Row   6:          1  benoc.req_ready_1     ((state == S_IDLE) && benoc.req_valid)
+
+----------------Focused Condition View-------------------
+Line       44 Item    1  (((state == S_READ_WAIT) && ddr.rd_valid) && ddr.rd_ready)
+Condition totals: 2 of 3 input terms covered = 66.66%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (state == S_READ_WAIT)         Y
+            ddr.rd_valid         Y
+            ddr.rd_ready         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:          1  (state == S_READ_WAIT)_0  -                             
+  Row   2:          1  (state == S_READ_WAIT)_1  (ddr.rd_ready && ddr.rd_valid)
+  Row   3:          1  ddr.rd_valid_0            (state == S_READ_WAIT)        
+  Row   4:          1  ddr.rd_valid_1            (ddr.rd_ready && (state == S_READ_WAIT))
+  Row   5:    ***0***  ddr.rd_ready_0            ((state == S_READ_WAIT) && ddr.rd_valid)
+  Row   6:          1  ddr.rd_ready_1            ((state == S_READ_WAIT) && ddr.rd_valid)
+
+----------------Focused Condition View-------------------
+Line       98 Item    1  (ddr.cmd_ready && ddr.wr_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM States                       5         5         0   100.00%
+    FSM Transitions                  9         6         3    66.66%
+
+================================FSM Details================================
+
+FSM Coverage for instance /top_tb/u_ddr64_ctrl --
+
+FSM_ID: state
+    Current State Object : state
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  77              S_IDLE                   0
+ 102          S_READ_CMD                   2
+  88             S_WRITE                   1
+ 119              S_RESP                   4
+ 112         S_READ_WAIT                   3
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+                  S_IDLE                 170          
+              S_READ_CMD                   4          
+                 S_WRITE                  83          
+                  S_RESP                  85          
+             S_READ_WAIT                   8          
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  84                   0                   4          S_IDLE -> S_READ_CMD          
+  82                   1                  81          S_IDLE -> S_WRITE             
+ 109                   2                   4          S_READ_CMD -> S_READ_WAIT          
+  99                   4                  81          S_WRITE -> S_RESP             
+ 126                   6                  85          S_RESP -> S_IDLE              
+ 116                   7                   4          S_READ_WAIT -> S_RESP          
+    Uncovered Transitions :
+    -----------------------
+Line            Trans_ID          Transition          
+----            --------          ----------          
+  33                   3          S_READ_CMD -> S_IDLE
+  33                   5          S_WRITE -> S_IDLE   
+  33                   8          S_READ_WAIT -> S_IDLE
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM States                   5         5         0   100.00%
+        FSM Transitions              9         6         3    66.66%
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      45        45         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_ddr64_ctrl --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/ddr64_ctrl.sv
+    31              1                        350     
+    33              1                          2     
+    34              1                          2     
+    35              1                          2     
+    38              1                        348     
+    41              1                         85     
+    45              1                          4     
+    50              1                        590     
+    51              1                        590     
+    54              1                        590     
+    55              1                        590     
+    56              1                        590     
+    59              1                        590     
+    60              1                        590     
+    61              1                        590     
+    62              1                        590     
+    65              1                        590     
+    66              1                        590     
+    67              1                        590     
+    70              1                        590     
+    73              1                        590     
+    78              1                        253     
+    82              1                        100     
+    84              1                          4     
+    89              1                        150     
+    90              1                        150     
+    91              1                        150     
+    92              1                        150     
+    94              1                        150     
+    95              1                        150     
+    96              1                        150     
+    99              1                        146     
+    103             1                          5     
+    104             1                          5     
+    105             1                          5     
+    106             1                          5     
+    109             1                          5     
+    113             1                          8     
+    116             1                          4     
+    120             1                        172     
+    121             1                        172     
+    122             1                        172     
+    123             1                        172     
+    126             1                         87     
+    130             1                          2     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        378       304        74    80.42%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_ddr64_ctrl --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                        next_state               ENUM type       Value       Count 
+                                   read_data_q[63]           0           1                               50.00 
+                                   read_data_q[59]           0           1                               50.00 
+                                   read_data_q[57]           0           1                               50.00 
+                                   read_data_q[56]           0           0                                0.00 
+                                   read_data_q[55]           0           1                               50.00 
+                                   read_data_q[54]           0           0                                0.00 
+                                   read_data_q[53]           0           1                               50.00 
+                                   read_data_q[52]           0           0                                0.00 
+                                   read_data_q[51]           0           1                               50.00 
+                                   read_data_q[47]           0           1                               50.00 
+                                read_data_q[44-43]           0           1                               50.00 
+                                   read_data_q[41]           0           1                               50.00 
+                                   read_data_q[39]           0           1                               50.00 
+                                   read_data_q[38]           0           0                                0.00 
+                                   read_data_q[37]           0           1                               50.00 
+                                   read_data_q[35]           0           1                               50.00 
+                                read_data_q[32-30]           0           1                               50.00 
+                                   read_data_q[29]           0           0                                0.00 
+                                read_data_q[27-26]           0           1                               50.00 
+                                   read_data_q[24]           0           0                                0.00 
+                                   read_data_q[23]           0           1                               50.00 
+                                   read_data_q[20]           0           0                                0.00 
+                                read_data_q[19-18]           0           1                               50.00 
+                                   read_data_q[17]           0           0                                0.00 
+                                read_data_q[15-14]           0           1                               50.00 
+                                   read_data_q[13]           0           0                                0.00 
+                                read_data_q[12-10]           0           1                               50.00 
+                                    read_data_q[7]           0           1                               50.00 
+                                  read_data_q[3-2]           0           1                               50.00 
+                                    read_data_q[1]           0           0                                0.00 
+                                    read_data_q[0]           0           1                               50.00 
+                                             rst_n           0           1                               50.00 
+                                  saved_pkt.src_id               ENUM type       Value       Count 
+                                     saved_pkt.qos               ENUM type       Value       Count 
+                                     saved_pkt.cmd               ENUM type       Value       Count 
+                             saved_pkt.addr[30-29]           0           1                               50.00 
+                             saved_pkt.addr[27-16]           0           1                               50.00 
+                               saved_pkt.addr[2-0]           0           0                                0.00 
+                            saved_pkt.burst_len[7]           0           0                                0.00 
+                            saved_pkt.burst_len[6]           0           1                               50.00 
+                                             state               ENUM type       Value       Count 
+
+Total Node Count     =        199 
+Toggled Node Count   =        139 
+Untoggled Node Count =         60 
+
+Toggle Coverage      =      80.42% (304 of 378 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_memory_model/u_crc8_check
+=== Design Unit: work.crc8
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_memory_model/u_crc8_check --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/crc8.sv
+    9               1                        164     
+    10              1                        164     
+    12              1                        164     
+    12              2                      10496     
+    13              1                      10496     
+    16              1                        164     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        224       160        64    71.42%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_memory_model/u_crc8_check --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                           i[31-0]           0           0                                0.00 
+
+Total Node Count     =        112 
+Toggled Node Count   =         80 
+Untoggled Node Count =         32 
+
+Toggle Coverage      =      71.42% (160 of 224 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_memory_model
+=== Design Unit: work.memory_model
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        17        17         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_memory_model
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/memory_model.sv
+------------------------------------IF Branch------------------------------------
+    31                                       601     Count coming in to IF
+    31              1                          3     
+    41              1                        598     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                       598     Count coming in to IF
+    43              1                         87     
+                                             511     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    45                                        87     Count coming in to IF
+    45              1                         83     
+    69              1                          4     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                        83     Count coming in to IF
+    47              1                         81     
+                                               2     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                        81     Count coming in to IF
+    49              1                         80     
+    55              1                          1     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                        81     Count coming in to IF
+    63              1                          7     
+                                              74     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                       598     Count coming in to IF
+    75              1                          4     
+    82              1                          4     
+                                             590     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    78                                         4     Count coming in to IF
+    78              1                          2     
+    79              1                          2     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       9         7         2    77.77%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_memory_model --
+
+  File ../rtl/memory_model.sv
+----------------Focused Condition View-------------------
+Line       43 Item    1  (ddr.cmd_valid && ddr.cmd_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       47 Item    1  (ddr.wr_valid && ddr.wr_ready)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  ddr.wr_valid         N  '_0' not hit             Hit '_0'
+  ddr.wr_ready         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  ddr.wr_valid_0        -                             
+  Row   2:          1  ddr.wr_valid_1        ddr.wr_ready                  
+  Row   3:          1  ddr.wr_ready_0        ddr.wr_valid                  
+  Row   4:          1  ddr.wr_ready_1        ddr.wr_valid                  
+
+----------------Focused Condition View-------------------
+Line       49 Item    1  (expected_crc == ddr.wr_crc)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       63 Item    1  (word_addr < 1024)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       77 Item    1  (read_addr_q < 1024)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       82 Item    1  (ddr.rd_valid && ddr.rd_ready)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  ddr.rd_valid         Y
+  ddr.rd_ready         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  ddr.rd_valid_0        -                             
+  Row   2:          1  ddr.rd_valid_1        ddr.rd_ready                  
+  Row   3:    ***0***  ddr.rd_ready_0        ddr.rd_valid                  
+  Row   4:          1  ddr.rd_ready_1        ddr.rd_valid                  
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      2         2         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top_tb/u_memory_model --
+
+  File ../rtl/memory_model.sv
+----------------Focused Expression View-----------------
+Line       25 Item    1  (ddr.wr_valid || ddr.rd_valid)
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19        19         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_memory_model --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/memory_model.sv
+    16              1                        242     
+    25              1                        242     
+    30              1                        601     
+    32              1                          3     
+    33              1                          3     
+    34              1                          3     
+    35              1                          3     
+    37              1                          3     
+    37              2                       3072     
+    38              1                       3072     
+    50              1                         80     
+    56              1                          1     
+    64              1                          7     
+    70              1                          4     
+    71              1                          4     
+    76              1                          4     
+    77              1                          4     
+    80              1                          4     
+    83              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        214       110       104    51.40%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_memory_model --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                           i[31-0]           0           0                                0.00 
+                                read_addr_q[31-29]           0           0                                0.00 
+                                read_addr_q[28-12]           0           1                               50.00 
+                                   read_addr_q[10]           0           1                               50.00 
+                                  read_addr_q[8-0]           0           1                               50.00 
+                                             rst_n           0           1                               50.00 
+                                  word_addr[29-31]           0           0                                0.00 
+
+Total Node Count     =        107 
+Toggled Node Count   =         41 
+Untoggled Node Count =         66 
+
+Toggle Coverage      =      51.40% (110 of 214 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_benoc_assertions
+=== Design Unit: work.benoc_assertions
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       8         8         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/u_benoc_assertions/assert__p_fabric_req_eventual_ddr_accept
+                     ../sva/benoc_assertions.sv(102)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(98)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(94)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_skid_valid_forward
+                     ../sva/benoc_assertions.sv(65)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_pkt_stable
+                     ../sva/benoc_assertions.sv(52)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_pkt_stable
+                     ../sva/benoc_assertions.sv(43)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_valid_hold
+                     ../sva/benoc_assertions.sv(30)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_valid_hold
+                     ../sva/benoc_assertions.sv(21)
+                                                        0          1
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          4         3         1    75.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_benoc_assertions --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =          2 
+Toggled Node Count   =          1 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      75.00% (3 of 4 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_benoc_scoreboard
+=== Design Unit: work.benoc_scoreboard
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         9         1    90.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_benoc_scoreboard
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/benoc_scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    13                                       600     Count coming in to IF
+    13              1                          2     
+    16              1                        598     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    19                                       598     Count coming in to IF
+    19              1                         20     
+                                             578     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                       598     Count coming in to IF
+    31              1                          4     
+                                             594     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                         4     Count coming in to IF
+    33              1                          4     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                         4     Count coming in to IF
+    35              1                          2     
+    42              1                          2     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         3         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_benoc_scoreboard --
+
+  File ../tb/benoc_scoreboard.sv
+----------------Focused Condition View-------------------
+Line       31 Item    1  (cpu_if.rsp_valid && (cpu_if.rsp_pkt.rdata != 'h0000000000000000))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       35 Item    1  (cpu_if.rsp_pkt.rdata == expected_mem[4096])
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_benoc_scoreboard --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/benoc_scoreboard.sv
+    12              1                        600     
+    14              1                          2     
+    23              1                         20     
+    25              1                         20     
+    38              1                          2     
+    44              1                          2     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          4         3         1    75.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_benoc_scoreboard --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =          2 
+Toggled Node Count   =          1 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      75.00% (3 of 4 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_benoc_perf_monitor
+=== Design Unit: work.benoc_perf_monitor
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        24        22         2    91.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/u_benoc_perf_monitor
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/benoc_perf_monitor.sv
+------------------------------------IF Branch------------------------------------
+    31                                       600     Count coming in to IF
+    31              1                          2     
+    51              1                        598     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                       598     Count coming in to IF
+    56              1                         24     
+                                             574     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                       598     Count coming in to IF
+    63              1                         19     
+                                             579     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                       598     Count coming in to IF
+    69              1                         87     
+                                             511     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                        87     Count coming in to IF
+    70              1                         83     
+    72              1                          4     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    77                                       598     Count coming in to IF
+    77              1                         45     
+                                             553     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    82                                       598     Count coming in to IF
+    82              1                         25     
+                                             573     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    88                                        25     Count coming in to IF
+    88              1                          2     
+                                              23     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    91                                        25     Count coming in to IF
+    91              1                          2     
+                                              23     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    98                                       598     Count coming in to IF
+    98              1                          3     
+                                             595     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    117                                        1     Count coming in to IF
+    117             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    122                                        1     Count coming in to IF
+    122             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      14        12         2    85.71%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/u_benoc_perf_monitor --
+
+  File ../tb/benoc_perf_monitor.sv
+----------------Focused Condition View-------------------
+Line       56 Item    1  (cpu_if.req_valid && cpu_if.req_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       63 Item    1  (ai_if.req_valid && ai_if.req_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (mem_if.cmd_valid && mem_if.cmd_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       77 Item    1  (cpu_if.rsp_valid || ai_if.rsp_valid)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       88 Item    1  (cpu_latency > max_latency)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       91 Item    1  (cpu_latency < min_latency)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       98 Item    1  (fabric_skid_if.req_valid && ~fabric_skid_if.req_ready)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       117 Item    1  (cycle_count != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+  (cycle_count != 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (cycle_count != 0)_0  -                             
+  Row   2:          1  (cycle_count != 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       122 Item    1  (latency_samples != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (latency_samples != 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (latency_samples != 0)_0  -                             
+  Row   2:          1  (latency_samples != 0)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      50        50         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_benoc_perf_monitor --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/benoc_perf_monitor.sv
+    30              1                        600     
+    32              1                          2     
+    33              1                          2     
+    34              1                          2     
+    35              1                          2     
+    36              1                          2     
+    37              1                          2     
+    38              1                          2     
+    39              1                          2     
+    41              1                          2     
+    43              1                          2     
+    44              1                          2     
+    46              1                          2     
+    47              1                          2     
+    48              1                          2     
+    49              1                          2     
+    52              1                        598     
+    53              1                        598     
+    57              1                         24     
+    58              1                         24     
+    59              1                         24     
+    64              1                         19     
+    65              1                         19     
+    71              1                         83     
+    73              1                          4     
+    78              1                         45     
+    83              1                         25     
+    85              1                         25     
+    86              1                         25     
+    89              1                          2     
+    92              1                          2     
+    94              1                         25     
+    99              1                          3     
+    105             1                          1     
+    106             1                          1     
+    107             1                          1     
+    108             1                          1     
+    109             1                          1     
+    110             1                          1     
+    111             1                          1     
+    112             1                          1     
+    113             1                          1     
+    114             1                          1     
+    115             1                          1     
+    118             1                          1     
+    123             1                          1     
+    126             1                          1     
+    127             1                          1     
+    128             1                          1     
+    131             1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        964       176       788    18.25%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_benoc_perf_monitor --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                   ai_req_count[4]           0           1                               50.00 
+                                ai_req_count[5-31]           0           0                                0.00 
+                                 cpu_latency[3-31]           0           0                                0.00 
+                                  cpu_req_count[4]           0           1                               50.00 
+                               cpu_req_count[5-31]           0           0                                0.00 
+                            cpu_req_start_cycle[9]           0           1                               50.00 
+                        cpu_req_start_cycle[10-31]           0           0                                0.00 
+                                  current_cycle[9]           0           1                               50.00 
+                              current_cycle[10-31]           0           0                                0.00 
+                                    cycle_count[9]           0           1                               50.00 
+                                cycle_count[10-31]           0           0                                0.00 
+                                latency_samples[4]           0           1                               50.00 
+                             latency_samples[5-31]           0           0                                0.00 
+                                    max_latency[0]           0           1                               50.00 
+                                    max_latency[2]           0           1                               50.00 
+                                 max_latency[3-31]           0           0                                0.00 
+                                    min_latency[0]           0           1                               50.00 
+                                  min_latency[6-8]           0           0                                0.00 
+                                min_latency[10-13]           0           0                                0.00 
+                                   min_latency[15]           0           0                                0.00 
+                                min_latency[20-31]           0           0                                0.00 
+                                 read_cmd_count[2]           0           1                               50.00 
+                              read_cmd_count[3-31]           0           0                                0.00 
+                                 response_count[5]           0           1                               50.00 
+                              response_count[6-31]           0           0                                0.00 
+                                             rst_n           0           1                               50.00 
+                                    stall_count[1]           0           1                               50.00 
+                                 stall_count[2-31]           0           0                                0.00 
+                                  total_latency[6]           0           1                               50.00 
+                               total_latency[7-31]           0           0                                0.00 
+                                total_req_count[5]           0           1                               50.00 
+                             total_req_count[6-31]           0           0                                0.00 
+                                write_cmd_count[6]           0           1                               50.00 
+                             write_cmd_count[7-31]           0           0                                0.00 
+
+Total Node Count     =        482 
+Toggled Node Count   =         80 
+Untoggled Node Count =        402 
+
+Toggle Coverage      =      18.25% (176 of 964 bins)
+
+=================================================================================
+=== Instance: /top_tb/u_benoc_coverage
+=== Design Unit: work.benoc_coverage
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         11        11         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /top_tb/u_benoc_coverage/benoc_cg               100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cpu_cmd_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ai_qos_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cpu_burst_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint addr_cp                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rsp_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/top_tb/u_benoc_coverage/cg     100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cpu_cmd_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read_bin                                        4          1          -    Covered              
+        bin write_bin                                      20          1          -    Covered              
+    Coverpoint ai_qos_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low_bin                                         4          1          -    Covered              
+        bin normal_bin                                      4          1          -    Covered              
+        bin high_bin                                        5          1          -    Covered              
+    Coverpoint cpu_burst_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin small_burst                                     2          1          -    Covered              
+        bin med_burst                                      14          1          -    Covered              
+        bin large_burst                                     7          1          -    Covered              
+    Coverpoint addr_cp                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low_addr                                       16          1          -    Covered              
+        bin high_addr                                       8          1          -    Covered              
+    Coverpoint rsp_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rsp_seen                                       25          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/u_benoc_coverage --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/benoc_coverage.sv
+    73              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          4         3         1    75.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/u_benoc_coverage --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =          2 
+Toggled Node Count   =          1 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      75.00% (3 of 4 bins)
+
+=================================================================================
+=== Instance: /top_tb
+=== Design Unit: work.top_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/#ublk#129394338#383/immed__386
+                     ../tb/top_tb.sv(386)               0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         5         4         1    80.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/top_tb.sv
+------------------------------------CASE Branch------------------------------------
+    394                                       50     Count coming in to CASE
+    396             1                         11     
+    406             1                         13     
+    416             1                         11     
+    426             1                         15     
+    436             1                    ***0***     
+Branch totals: 4 hits of 5 branches = 80.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     209       208         1    99.52%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/top_tb.sv
+    13              1                          1     
+    14              1                          1     
+    14              2                       1200     
+    14              3                       1199     
+    18              1                          1     
+    19              1                          1     
+    20              1                          1     
+    108             1                         20     
+    109             1                         20     
+    110             1                         20     
+    111             1                         20     
+    112             1                         20     
+    113             1                         20     
+    114             1                         20     
+    115             1                         20     
+    117             1                         22     
+    118             1                         22     
+    121             1                         20     
+    133             1                         19     
+    134             1                         19     
+    135             1                         19     
+    136             1                         19     
+    137             1                         19     
+    138             1                         19     
+    139             1                         19     
+    140             1                         19     
+    142             1                         23     
+    143             1                         23     
+    146             1                         19     
+    158             1                         18     
+    159             1                         18     
+    160             1                         18     
+    161             1                         18     
+    162             1                         18     
+    163             1                         18     
+    164             1                         18     
+    165             1                         18     
+    167             1                         18     
+    168             1                         18     
+    171             1                         18     
+    184             1                         22     
+    185             1                         22     
+    186             1                         22     
+    187             1                         22     
+    188             1                         22     
+    189             1                         22     
+    190             1                         22     
+    191             1                         22     
+    193             1                         22     
+    194             1                         22     
+    197             1                         22     
+    206             1                          4     
+    208             1                          4     
+    209             1                          4     
+    210             1                          4     
+    211             1                          4     
+    212             1                          4     
+    213             1                          4     
+    214             1                          4     
+    216             1                          4     
+    217             1                          4     
+    220             1                          4     
+    222             1                          4     
+    224             1                          4     
+    231             1                          1     
+    233             1                          5     
+    235             1                          5     
+    236             1                         10     
+    236             2                         10     
+    237             1                          5     
+    239             1                          5     
+    240             1                         10     
+    240             2                         10     
+    241             1                          5     
+    243             1                          5     
+    244             1                         10     
+    244             2                         10     
+    245             1                          5     
+    249             1                          1     
+    254             1                          1     
+    255             1                          1     
+    256             1                          1     
+    257             1                          1     
+    259             1                          1     
+    260             1                          1     
+    261             1                          1     
+    262             1                          1     
+    264             1                          1     
+    265             1                          1     
+    266             1                          1     
+    267             1                          1     
+    268             1                          1     
+    270             1                          1     
+    271             1                          1     
+    275             1                          1     
+    283             1                          1     
+    292             1                          1     
+    293             1                         10     
+    293             2                         10     
+    296             1                          1     
+    301             1                         10     
+    301             2                         10     
+    304             1                          1     
+    312             1                          5     
+    312             2                          5     
+    315             1                          1     
+    323             1                          5     
+    323             2                          5     
+    326             1                          1     
+    334             1                          5     
+    334             2                          5     
+    337             1                          1     
+    345             1                          5     
+    345             2                          5     
+    348             1                          1     
+    356             1                         10     
+    356             2                         10     
+    359             1                          1     
+    361             1                          1     
+    370             1                          3     
+    370             2                          3     
+    372             1                          1     
+    374             1                          5     
+    374             2                          5     
+    383             1                         50     
+    384             1                         50     
+    389             1                         50     
+    392             1                         50     
+    397             1                         11     
+    407             1                         13     
+    417             1                         11     
+    427             1                         15     
+    437             1                    ***0***     
+    442             1                        150     
+    442             2                        150     
+    446             1                          5     
+    447             1                          5     
+    455             1                         12     
+    455             2                         12     
+    459             1                          5     
+    460             1                          5     
+    468             1                          8     
+    468             2                          8     
+    475             1                          1     
+    479             1                          1     
+    489             1                          3     
+    489             2                          3     
+    491             1                          1     
+    493             1                          5     
+    493             2                          5     
+    499             1                          1     
+    503             1                          1     
+    513             1                          3     
+    513             2                          3     
+    515             1                          1     
+    517             1                          5     
+    517             2                          5     
+    519             1                         30     
+    519             2                         30     
+    526             1                          1     
+    531             1                         10     
+    531             2                         10     
+    538             1                          5     
+    538             2                          5     
+    541             1                          1     
+    542             1                          1     
+    546             1                          1     
+    556             1                          4     
+    556             2                          4     
+    558             1                          1     
+    559             1                          1     
+    561             1                         10     
+    561             2                         10     
+    569             1                          1     
+    573             1                          1     
+    580             1                          4     
+    580             2                          4     
+    582             1                          1     
+    584             1                         10     
+    584             2                         10     
+    591             1                          1     
+    599             1                          5     
+    599             2                          5     
+    601             1                          1     
+    609             1                          5     
+    609             2                          5     
+    611             1                          1     
+    619             1                          5     
+    619             2                          5     
+    621             1                          1     
+    629             1                         20     
+    629             2                         20     
+    636             1                          1     
+    644             1                          5     
+    644             2                          5     
+    646             1                          1     
+    654             1                          5     
+    654             2                          5     
+    656             1                          1     
+    664             1                          5     
+    664             2                          5     
+    666             1                          1     
+    674             1                         10     
+    674             2                         10     
+    676             1                          1     
+    681             1                         20     
+    681             2                         20     
+    683             1                          1     
+    685             1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          6         5         1    83.33%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                             rst_n           0           1                               50.00 
+
+Total Node Count     =          3 
+Toggled Node Count   =          2 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      83.33% (5 of 6 bins)
+
+=================================================================================
+=== Instance: /traffic_pkg
+=== Design Unit: work.traffic_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10        10         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /traffic_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/traffic_txn.sv
+    50              1                         50     
+    51              1                         50     
+    52              1                         50     
+    53              1                         50     
+    54              1                         50     
+    55              1                         50     
+    56              1                         50     
+    57              1                         50     
+    58              1                         50     
+    59              1                         50     
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /top_tb/u_benoc_coverage/benoc_cg               100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cpu_cmd_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ai_qos_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint cpu_burst_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint addr_cp                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rsp_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/top_tb/u_benoc_coverage/cg     100.00%        100          -    Covered              
+    covered/total bins:                                    11         11          -                      
+    missing/total bins:                                     0         11          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cpu_cmd_cp                             100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read_bin                                        4          1          -    Covered              
+        bin write_bin                                      20          1          -    Covered              
+    Coverpoint ai_qos_cp                              100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low_bin                                         4          1          -    Covered              
+        bin normal_bin                                      4          1          -    Covered              
+        bin high_bin                                        5          1          -    Covered              
+    Coverpoint cpu_burst_cp                           100.00%        100          -    Covered              
+        covered/total bins:                                 3          3          -                      
+        missing/total bins:                                 0          3          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin small_burst                                     2          1          -    Covered              
+        bin med_burst                                      14          1          -    Covered              
+        bin large_burst                                     7          1          -    Covered              
+    Coverpoint addr_cp                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin low_addr                                       16          1          -    Covered              
+        bin high_addr                                       8          1          -    Covered              
+    Coverpoint rsp_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin rsp_seen                                       25          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/#ublk#129394338#383/immed__386
+                     ../tb/top_tb.sv(386)               0          1
+/top_tb/u_benoc_assertions/assert__p_fabric_req_eventual_ddr_accept
+                     ../sva/benoc_assertions.sv(102)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(98)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(94)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_skid_valid_forward
+                     ../sva/benoc_assertions.sv(65)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_pkt_stable
+                     ../sva/benoc_assertions.sv(52)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_pkt_stable
+                     ../sva/benoc_assertions.sv(43)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_valid_hold
+                     ../sva/benoc_assertions.sv(30)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_valid_hold
+                     ../sva/benoc_assertions.sv(21)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 89.63%
+
