@@ -22,11 +22,11 @@ ________________________________________
 # System Architecture
 
 CPU Traffic Generator
-          │
+        ↓
 AI Traffic Generator
-          │
+        ↓
 DMA Traffic Generator
-          │
+        ↓
 Debug Traffic Generator
           ▼
 
@@ -93,6 +93,7 @@ The verification environment implements coverage-driven verification to track ar
 <p align="center">
 Figure 3. Functional coverage model used to measure arbitration fairness, source-destination routing combinations, traffic classes, and memory transaction scenarios.
 </p>
+
 ________________________________________
 ## Key Design Features
 
