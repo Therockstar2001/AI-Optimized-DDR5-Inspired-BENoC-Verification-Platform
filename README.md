@@ -21,44 +21,7 @@ The objective of this project was to create a realistic verification platform ca
 ________________________________________
 # System Architecture
 
-CPU Traffic Generator
-          
-          ▼
-AI Traffic Generator
-          
-          ▼
-DMA Traffic Generator
-          
-          ▼
-Debug Traffic Generator
-          ▼
-
-      BENoC Fabric
-(QoS Arbitration Engine)
-
-          ▼
-
-      Skid Buffer
-(Backpressure Isolation)
-
-          ▼
-
-DDR5-Inspired Memory Controller
-(Read/Write Scheduling)
-
-          ▼
-
-       CRC Layer
-(Data Integrity)
-
-          ▼
-
-     DDR PHY Model
-
-          ▼
-
-      Memory Model
-
+<img width="1024" height="1536" alt="81a9f2e1-774e-441b-8441-1e3d9312ee36" src="https://github.com/user-attachments/assets/25a8fe57-635d-4d5a-a124-44b221cbd19e" />
 
 
 ## BENoC Fabric Architecture
