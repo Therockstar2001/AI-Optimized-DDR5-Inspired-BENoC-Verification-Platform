@@ -22,13 +22,13 @@ ________________________________________
 # System Architecture
 
 CPU Traffic Generator
-          │
+          
           ▼
 AI Traffic Generator
-          │
+          
           ▼
 DMA Traffic Generator
-          │
+          
           ▼
 Debug Traffic Generator
           ▼
