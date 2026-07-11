@@ -1,4 +1,34 @@
-# Questa/ModelSim
+# ==========================================
+# Generic Hardware Simulator Artifacts
+# ==========================================
+
+# Synopsys VCS
+csrc/
+*.daidir/
+vcs_command.log
+ucli.key
+simv
+simv.daidir/
+simv.vdb/
+urgReport/
+
+# Cadence Xcelium / NC-Sim
+xcelium.d/
+vcs_lib/
+INCA_libs/
+waves.shm/
+xmsim.key
+xmcompile.key
+xmvhdl.key
+xmvlog.key
+
+# General Simulation/Waveform Dumps
+*.vcd
+*.fsdb
+*.shm
+*.vpd
+
+# System Files
 work/
 *.wlf
 *.dbg
@@ -29,3 +59,19 @@ Thumbs.db
 # Python cache
 __pycache__/
 *.pyc
+
+# Ignore compilation artifacts
+sim/run.do
+sim/work/
+sim/msim/
+sim/*.ini
+sim/*.ucdb
+sim/*.log
+sim/*.wlf
+
+# Ignore local coverage backup text dumps
+coverage_backups/
+sim/*.txt
+
+# Ignore specific analysis reports
+coverage_recommendations.md
