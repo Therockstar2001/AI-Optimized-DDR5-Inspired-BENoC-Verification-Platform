@@ -10,13 +10,13 @@ ________________________________________
 
 Modern SoCs rarely operate under ideal traffic conditions. Multiple masters often compete for access to shared memory resources while operating under different latency and bandwidth requirements.
 Typical challenges include:
-•	Simultaneous access requests from multiple masters
-•	Arbitration fairness and starvation prevention
-•	Congestion and backpressure propagation
-•	Data corruption detection
-•	Protocol compliance
-•	Coverage closure for complex traffic interactions
-•	Verification scalability as subsystem complexity grows
+*	Simultaneous access requests from multiple masters
+*	Arbitration fairness and starvation prevention
+*	Congestion and backpressure propagation
+*	Data corruption detection
+*	Protocol compliance
+*	Coverage closure for complex traffic interactions
+*	Verification scalability as subsystem complexity grows
 The objective of this project was to create a realistic verification platform capable of validating a memory subsystem under these conditions while providing measurable verification results and coverage metrics.
 ________________________________________
 # System Architecture
@@ -67,100 +67,100 @@ ________________________________________
 
 The BENoC fabric serves as the central communication layer between traffic generators and memory resources.
 Implemented features:
-•	Four independent traffic masters
-•	QoS-aware arbitration
-•	Round-robin scheduling
-•	Priority-based scheduling
-•	Request routing
-•	Response routing
-•	Backpressure propagation
-•	Congestion handling
+*	Four independent traffic masters
+*	QoS-aware arbitration
+*	Round-robin scheduling
+*	Priority-based scheduling
+*	Request routing
+*	Response routing
+*	Backpressure propagation
+*	Congestion handling
 
 Traffic sources:
-•	CPU
-•	AI Accelerator
-•	DMA Engine
-•	Debug Interface
+*	CPU
+*	AI Accelerator
+*	DMA Engine
+*	Debug Interface
 ________________________________________
 # Skid Buffer
 
 A skid buffer was introduced between the BENoC and DDR controller to improve protocol robustness during backpressure conditions.
 Benefits:
-•	Prevents transaction loss
-•	Preserves packet integrity
-•	Decouples producer and consumer timing
-•	Supports valid-ready handshake compliance
+*	Prevents transaction loss
+*	Preserves packet integrity
+*	Decouples producer and consumer timing
+*	Supports valid-ready handshake compliance
 Although not part of the original project plan, the skid buffer significantly improved system realism and verification complexity.
 ________________________________________
 # DDR5-Inspired Memory Controller
 
 The memory controller implements a simplified DDR5-inspired transaction flow.
 Supported functionality:
-•	64-bit data path
-•	Read transactions
-•	Write transactions
-•	Burst transfers
-•	Command scheduling
-•	Response generation
-•	Transaction buffering
+*	64-bit data path
+*	Read transactions
+*	Write transactions
+*	Burst transfers
+*	Command scheduling
+*	Response generation
+*	Transaction buffering
 The controller focuses on memory command sequencing and transaction management rather than complete JEDEC DDR5 compliance.
 ________________________________________
 # CRC Protection Layer
 
 A CRC mechanism was implemented to detect transaction corruption.
 Features:
-•	CRC generation
-•	CRC checking
-•	Error injection support
-•	Error detection verification
+*	CRC generation
+*	CRC checking
+*	Error injection support
+*	Error detection verification
 The verification environment intentionally injects CRC failures to ensure proper detection and reporting.
 ________________________________________
 # Memory Model
 
 A cycle-accurate memory model was developed to support:
-•	Read storage
-•	Write storage
-•	Address validation
-•	Boundary checking
-•	Error scenario generation
+*	Read storage
+*	Write storage
+*	Address validation
+*	Boundary checking
+*	Error scenario generation
 The model serves as both a functional storage element and a verification reference point.
 ________________________________________
 # Verification Methodology
 
 The project follows a coverage-driven verification methodology.
 Verification infrastructure includes:
-•	Constrained-random stimulus
-•	Directed testing
-•	Functional coverage
-•	Assertion-based verification
-•	Scoreboard checking
-•	Coverage analytics
-•	Fault injection
+*	Constrained-random stimulus
+*	Directed testing
+*	Functional coverage
+*	Assertion-based verification
+*	Scoreboard checking
+*	Coverage analytics
+*	Fault injection
 ________________________________________
 # Scoreboard Architecture
 
 A transaction-level scoreboard validates:
-•	Address correctness
-•	Data integrity
-•	Read responses
-•	Write completion
-•	Ordering rules
-•	CRC behavior
+*	Address correctness
+*	Data integrity
+*	Read responses
+*	Write completion
+*	Ordering rules
+*	CRC behavior
 Expected transactions are compared against actual DUT behavior to detect mismatches.
 ________________________________________
 # Assertion-Based Verification
 
 SystemVerilog Assertions (SVA) were developed to validate protocol and architectural behavior.
 Verification checks include:
-•	Valid-ready compliance
-•	Packet stability
-•	Arbitration correctness
-•	Request-response completion
-•	Skid buffer forwarding
-•	Progress guarantees
-•	Protocol timing behavior
+*	Valid-ready compliance
+*	Packet stability
+*	Arbitration correctness
+*	Request-response completion
+*	Skid buffer forwarding
+*	Progress guarantees
+*	Protocol timing behavior
 Results:
-•	100% Assertion Coverage
+*	100% Assertion Coverage
 ________________________________________
 # Coverage Strategy
 
@@ -169,50 +169,54 @@ Coverage closure was performed using a combination of directed and constrained-r
 Coverage categories:
 
 Functional Coverage
-•	All masters exercised
-•	All QoS levels exercised
-•	Read/write combinations
-•	Backpressure scenarios
-•	Arbitration contention
-•	CRC error cases
-•	Memory access patterns
+*	All masters exercised
+*	All QoS levels exercised
+*	Read/write combinations
+*	Backpressure scenarios
+*	Arbitration contention
+*	CRC error cases
+*	Memory access patterns
 
 Assertion Coverage
-•	Protocol properties
-•	Handshake properties
-•	Completion properties
-•	Buffer behavior
+*	Protocol properties
+*	Handshake properties
+*	Completion properties
+*	Buffer behavior
 
 Code Coverage
-•	Statement coverage
-•	Branch coverage
-•	Condition coverage
-•	FSM coverage
-•	Toggle coverage
+*	Statement coverage
+*	Branch coverage
+*	Condition coverage
+*	FSM coverage
+*	Toggle coverage
 ________________________________________
 # Coverage Closure Campaign
 
 Several targeted closure activities were executed:
 
-# Backpressure Stress Testing
+Backpressure Stress Testing
+
 Validated:
-•	Command stalls
-•	Read stalls
-•	Write stalls
-•	Recovery behavior
+*	Command stalls
+*	Read stalls
+*	Write stalls
+*	Recovery behavior
+
 QoS Verification
 
 Exercised:
-•	Low priority traffic
-•	Normal priority traffic
-•	High priority traffic
-•	Critical priority traffic
+*	Low priority traffic
+*	Normal priority traffic
+*	High priority traffic
+*	Critical priority traffic
+
 High Address Testing
 
 Targeted:
 •	Upper address bits
 •	Boundary conditions
 •	Address decode paths
+
 Data Pattern Testing
 
 Used patterns such as:
@@ -220,28 +224,29 @@ Used patterns such as:
 •	All ones
 •	Alternating bit patterns
 •	Randomized payloads
+
 Burst Stress Testing
 
 Validated:
-•	Small bursts
-•	Large bursts
-•	Boundary burst behavior
+*	Small bursts
+*	Large bursts
+*	Boundary burst behavior
 ________________________________________
 # Verification Analytics
 
 Beyond the original project plan, a verification analytics framework was developed.
 
 Python utilities automatically:
-•	Parse simulation logs
-•	Extract verification metrics
-•	Generate coverage summaries
-•	Detect uncovered regions
-•	Recommend future tests
+*	Parse simulation logs
+*	Extract verification metrics
+*	Generate coverage summaries
+*	Detect uncovered regions
+*	Recommend future tests
 
 Generated outputs:
-•	Coverage reports
-•	CSV summaries
-•	Coverage recommendation reports
+*	Coverage reports
+*	CSV summaries
+*	Coverage recommendation reports
 This provides a lightweight coverage closure assistant for future verification iterations.
 ________________________________________
 # Performance Monitoring
@@ -249,25 +254,25 @@ ________________________________________
 Additional infrastructure was added to collect runtime metrics.
 
 Measured statistics include:
-•	Request count
-•	Response count
-•	Throughput
-•	Average latency
-•	Maximum latency
-•	Minimum latency
+*	Request count
+*	Response count
+*	Throughput
+*	Average latency
+*	Maximum latency
+*	Minimum latency
 This functionality was not part of the original project scope but was added to provide quantitative performance insight.
 ________________________________________
 # Verification Results
 
 Final verification results:
-•	Functional Coverage: 100%
-•	Assertion Coverage: 100%
-•	Code Coverage: ~90%
-•	CRC Verification: PASS
-•	Scoreboard Verification: PASS
-•	Data Integrity Validation: PASS
-•	Backpressure Verification: PASS
-•	QoS Verification: PASS
+*	Functional Coverage: 100%
+*	Assertion Coverage: 100%
+*	Code Coverage: ~90%
+*	CRC Verification: PASS
+*	Scoreboard Verification: PASS
+*	Data Integrity Validation: PASS
+*	Backpressure Verification: PASS
+*	QoS Verification: PASS
 ________________________________________
 # Challenges Encountered
 
@@ -291,36 +296,36 @@ Potential future improvements include:
 
 Full UVM Migration
 Current verification infrastructure can be migrated into a complete UVM environment including:
-•	UVM Agents
-•	UVM Drivers
-•	UVM Monitors
-•	UVM Sequencers
-•	UVM Scoreboards
-•	UVM Subscribers
+*	UVM Agents
+*	UVM Drivers
+*	UVM Monitors
+*	UVM Sequencers
+*	UVM Scoreboards
+*	UVM Subscribers
 
 Advanced DDR Modeling
-•	Multi-bank operation
-•	Refresh behavior
-•	Row-buffer management
-•	Timing constraints
+*	Multi-bank operation
+*	Refresh behavior
+*	Row-buffer management
+*	Timing constraints
 
 Formal Verification
-•	Questa Formal
-•	JasperGold
-•	Property proofs
-•	Deadlock analysis
+*	Questa Formal
+*	JasperGold
+*	Property proofs
+*	Deadlock analysis
 
 Frequency Ratio Modeling
 Support behavioral implementation of:
-•	1:1 mode
-•	1:2 mode
-•	1:4 mode
-•	1:8 mode
+*	1:1 mode
+*	1:2 mode
+*	1:4 mode
+*	1:8 mode
 
 Enhanced Analytics
-•	Automatic test generation
-•	Coverage prediction
-•	ML-assisted closure recommendations
+*	Automatic test generation
+*	Coverage prediction
+*	ML-assisted closure recommendations
 ________________________________________
 # Conclusion
 
