@@ -213,17 +213,17 @@ Exercised:
 High Address Testing
 
 Targeted:
-•	Upper address bits
-•	Boundary conditions
-•	Address decode paths
+*	Upper address bits
+*	Boundary conditions
+*	Address decode paths
 
 Data Pattern Testing
 
 Used patterns such as:
-•	All zeros
-•	All ones
-•	Alternating bit patterns
-•	Randomized payloads
+*	All zeros
+*	All ones
+*	Alternating bit patterns
+*	Randomized payloads
 
 Burst Stress Testing
 
