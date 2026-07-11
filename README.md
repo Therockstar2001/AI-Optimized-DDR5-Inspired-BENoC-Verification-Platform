@@ -27,11 +27,11 @@ ________________________________________
 ## BENoC Fabric Architecture
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/bc79fee0-af8d-4479-825a-7e8d9d833ef0" alt="BENoC Fabric Schematic" width="900">
+  <img src="https://github.com/user-attachments/assets/a3c91114-4964-4a10-bc77-40162d8367f7" alt="BENoC Fabric Schematic" width="900">
 </p>
 
 <p align="center">
-Figure 1. Synthesized BENoC fabric showing arbitration logic, traffic routing paths, and DDR controller connectivity.
+  Figure 1. Synthesized BENoC fabric showing arbitration logic, traffic routing paths, and DDR controller connectivity.
 </p>
 
 ---
