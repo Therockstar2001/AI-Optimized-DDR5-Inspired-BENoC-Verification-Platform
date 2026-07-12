@@ -273,6 +273,26 @@ Final verification results:
 *	Data Integrity Validation: PASS
 *	Backpressure Verification: PASS
 *	QoS Verification: PASS
+
+```
+# ===============================================
+#  BeNoC PERFORMANCE REPORT
+# ===============================================
+#  Total cycles         = 211
+#  CPU requests         = 14
+#  AI requests          = 15
+#  Total requests       = 29
+#  DDR write commands   = 28
+#  DDR read commands    = 1
+#  Responses            = 29
+#  Stall cycles         = 1
+#  Request throughput   = 0.137441 req/cycle
+#  Avg CPU latency      = 3.142857 cycles
+#  Max CPU latency      = 5 cycles
+#  Min CPU latency      = 3 cycles
+#  Latency samples      = 14
+# ===============================================
+```
 ________________________________________
 # Challenges Encountered
 
