@@ -50,7 +50,7 @@ Figure 2. DDR controller finite-state machine showing IDLE, READ_CMD, WRITE, WAI
 
 ## Functional Coverage Architecture
 
-The verification environment implements coverage-driven verification to track arbitration behavior, source traffic distribution, destination routing, burst patterns, and DDR transaction activity.
+The verification environment implements coverage-driven verification to track arbitration behavior, source traffic distribution, destination routing, burst-length patterns, and DDR transaction activity.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0ce902e5-20c7-489a-a730-73d97079eea2" alt="Coverage Architecture" width="900">
@@ -68,9 +68,8 @@ ________________________________________
 The BENoC fabric serves as the central communication layer between traffic generators and memory resources.
 Implemented features:
 *	Four independent traffic masters
-*	QoS-aware arbitration
+*	QoS transaction metadata
 *	Round-robin scheduling
-*	Priority-based scheduling
 *	Request routing
 *	Response routing
 *	Backpressure propagation
@@ -99,7 +98,7 @@ Supported functionality:
 *	64-bit data path
 *	Read transactions
 *	Write transactions
-*	Burst transfers
+*	Burst-length support
 *	Command scheduling
 *	Response generation
 *	Transaction buffering
@@ -154,7 +153,7 @@ SystemVerilog Assertions (SVA) were developed to validate protocol and architect
 Verification checks include:
 *	Valid-ready compliance
 *	Packet stability
-*	Arbitration correctness
+*	Bounded request-response progress
 *	Request-response completion
 *	Skid buffer forwarding
 *	Progress guarantees
@@ -202,7 +201,7 @@ Validated:
 *	Write stalls
 *	Recovery behavior
 
-QoS Verification
+QoS Traffic Coverage
 
 Exercised:
 *	Low priority traffic
@@ -225,12 +224,12 @@ Used patterns such as:
 *	Alternating bit patterns
 *	Randomized payloads
 
-Burst Stress Testing
+Burst-length Testing
 
 Validated:
-*	Small bursts
-*	Large bursts
-*	Boundary burst behavior
+*	Small burst-length
+*	Large burst-length
+*	Burst-length boundary values
 ________________________________________
 # Verification Analytics
 
@@ -272,7 +271,7 @@ Final verification results:
 *	Scoreboard Verification: PASS
 *	Data Integrity Validation: PASS
 *	Backpressure Verification: PASS
-*	QoS Verification: PASS
+*	QoS Traffic Coverage: PASS
 
 ```
 # ===============================================
@@ -346,6 +345,12 @@ Enhanced Analytics
 *	Automatic test generation
 *	Coverage prediction
 *	ML-assisted closure recommendations
+
+QoS-Aware Arbitration
+* Extend the current round-robin arbiter to use transaction QoS metadata for priority selection while preserving fairness and starvation protection.
+
+Multi-Beat Burst Support
+* Extend burst-length metadata into true multi-beat INCR transactions using beat counters, address progression, repeated data handshakes, final-beat tracking, and burst-aware scoreboarding.
 ________________________________________
 # Conclusion
 
