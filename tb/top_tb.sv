@@ -78,7 +78,10 @@ module top_tb;
   benoc_scoreboard u_benoc_scoreboard (
     .clk   (clk),
     .rst_n (rst_n),
-    .cpu_if(cpu_if)
+    .cpu_if(cpu_if),
+    .ai_if (ai_if),
+    .dma_if(dma_if),
+    .dbg_if(dbg_if)
   );
 
   benoc_perf_monitor u_benoc_perf_monitor (
@@ -219,10 +222,78 @@ module top_tb;
 
       cpu_if.req_valid <= 1'b0;
 
-      wait(cpu_if.rsp_valid);
+      // If a previous CPU write response overlaps this read-request
+      // acceptance cycle, let that response retire first.
+      if (cpu_if.rsp_valid) begin
+        do begin
+          @(posedge clk);
+        end while (cpu_if.rsp_valid);
+      end
+
+      wait(cpu_if.rsp_valid && cpu_if.rsp_ready);
 
       $display("CPU READ RESPONSE DATA = %h",
                 cpu_if.rsp_pkt.rdata);
+    end
+  endtask
+
+  // Read helpers for the remaining BENoC masters.
+  // Each task waits for the read response so the directed cross-master
+  // tests below complete deterministically.
+  task automatic send_ai_read;
+    input logic [31:0] addr;
+    input logic [7:0]  burst_len;
+
+    begin
+      send_ai_req(QOS_NORMAL, READ, addr, 64'h0, burst_len);
+
+      // A previous write response can overlap the cycle in which this read
+      // request is accepted.  If so, wait for that response to retire before
+      // waiting for this read response.
+      if (ai_if.rsp_valid) begin
+        do begin
+          @(posedge clk);
+        end while (ai_if.rsp_valid);
+      end
+
+      wait(ai_if.rsp_valid && ai_if.rsp_ready);
+      $display("AI READ RESPONSE DATA = %h", ai_if.rsp_pkt.rdata);
+    end
+  endtask
+
+  task automatic send_dma_read;
+    input logic [31:0] addr;
+    input logic [7:0]  burst_len;
+
+    begin
+      send_dma_req(QOS_NORMAL, READ, addr, 64'h0, burst_len);
+
+      if (dma_if.rsp_valid) begin
+        do begin
+          @(posedge clk);
+        end while (dma_if.rsp_valid);
+      end
+
+      wait(dma_if.rsp_valid && dma_if.rsp_ready);
+      $display("DMA READ RESPONSE DATA = %h", dma_if.rsp_pkt.rdata);
+    end
+  endtask
+
+  task automatic send_dbg_read;
+    input logic [31:0] addr;
+    input logic [7:0]  burst_len;
+
+    begin
+      send_dbg_req(QOS_NORMAL, READ, addr, 64'h0, burst_len);
+
+      if (dbg_if.rsp_valid) begin
+        do begin
+          @(posedge clk);
+        end while (dbg_if.rsp_valid);
+      end
+
+      wait(dbg_if.rsp_valid && dbg_if.rsp_ready);
+      $display("DBG READ RESPONSE DATA = %h", dbg_if.rsp_pkt.rdata);
     end
   endtask
 
@@ -265,7 +336,7 @@ module top_tb;
     ai_if.rsp_ready  = 1'b1;
     dma_if.rsp_ready = 1'b1;
     dbg_if.rsp_ready = 1'b1;
-    crc_error_inject = 1'b0;   
+    crc_error_inject = 1'b0;
 
     wait(rst_n);
     @(posedge clk);
@@ -296,6 +367,85 @@ module top_tb;
     send_cpu_read(
       32'h0000_1000,
       8
+    );
+
+    repeat (10) @(posedge clk);
+
+    // ------------------------------------------------------------
+    // 4-MASTER END-TO-END SCOREBOARD TEST
+    // ------------------------------------------------------------
+    // All addresses below are inside the 1024 x 64-bit memory model
+    // (valid byte-address range 0x0000_0000 through 0x0000_1FFF).
+    // Each master performs a write, and a different master reads it back.
+
+    // CPU -> AI
+    send_cpu_req(
+      QOS_NORMAL,
+      WRITE,
+      32'h0000_0100,
+      64'h1111_2222_3333_4444,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    send_ai_read(
+      32'h0000_0100,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    // AI -> DMA
+    send_ai_req(
+      QOS_NORMAL,
+      WRITE,
+      32'h0000_0200,
+      64'hAAAA_BBBB_CCCC_DDDD,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    send_dma_read(
+      32'h0000_0200,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    // DMA -> DBG
+    send_dma_req(
+      QOS_NORMAL,
+      WRITE,
+      32'h0000_0300,
+      64'h0123_4567_89AB_CDEF,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    send_dbg_read(
+      32'h0000_0300,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    // DBG -> CPU
+    send_dbg_req(
+      QOS_NORMAL,
+      WRITE,
+      32'h0000_0400,
+      64'hFEDC_BA98_7654_3210,
+      1
+    );
+
+    repeat (5) @(posedge clk);
+
+    send_cpu_read(
+      32'h0000_0400,
+      1
     );
 
     repeat (10) @(posedge clk);
@@ -469,54 +619,71 @@ module top_tb;
     end
 
     //-----------------------------------
-    // CPU VALID HOLD TEST
+    // CPU VALID + PACKET STABILITY TEST
     //-----------------------------------
-  
-    force cpu_if.req_ready = 1'b0;
 
-    fork
-    begin
-      send_cpu_req(
-        QOS_NORMAL,
-        WRITE,
-        32'h0000_A000,
-        64'h1111_2222_3333_4444,
-        8
-      );
-    end
-    join_none
+    repeat (10) @(posedge clk);
 
-    repeat(3) @(posedge clk);
+    @(negedge clk);
+    force fabric_skid_if.req_ready = 1'b0;
 
-    release cpu_if.req_ready;
+    cpu_if.req_valid         <= 1'b1;
+    cpu_if.req_pkt.src_id    <= SRC_CPU;
+    cpu_if.req_pkt.qos       <= QOS_NORMAL;
+    cpu_if.req_pkt.cmd       <= WRITE;
+    cpu_if.req_pkt.addr      <= 32'h0000_0500;
+    cpu_if.req_pkt.data      <= 64'h1111_2222_3333_4444;
+    cpu_if.req_pkt.burst_len <= 8;
 
-    repeat(5) @(posedge clk);
+    repeat (3) @(posedge clk);
 
-     //-----------------------------------
-     // AI VALID HOLD TEST
-     //-----------------------------------
+    @(negedge clk);
+    release fabric_skid_if.req_ready;
 
-    force ai_if.req_ready = 1'b0;
+    do begin
+      @(posedge clk);
+    end while (!cpu_if.req_ready);
 
-    fork
-    begin
-      send_ai_req(
-        QOS_NORMAL,
-        WRITE,
-        32'h0000_B000,
-        64'h5555_6666_7777_8888,
-        8  
-      );
-    end
-    join_none
+    @(negedge clk);
+    cpu_if.req_valid <= 1'b0;
 
-    repeat(3) @(posedge clk);
+    wait(cpu_if.rsp_valid && cpu_if.rsp_ready);
 
-    release ai_if.req_ready;
+    repeat (5) @(posedge clk);
 
-    repeat(5) @(posedge clk);
 
-    repeat (30) @(posedge clk);
+    //-----------------------------------
+    // AI VALID + PACKET STABILITY TEST
+    //-----------------------------------
+
+    repeat (10) @(posedge clk);
+
+    @(negedge clk);
+    force fabric_skid_if.req_ready = 1'b0;
+
+    ai_if.req_valid         <= 1'b1;
+    ai_if.req_pkt.src_id    <= SRC_AI;
+    ai_if.req_pkt.qos       <= QOS_NORMAL;
+    ai_if.req_pkt.cmd       <= WRITE;
+    ai_if.req_pkt.addr      <= 32'h0000_0600;
+    ai_if.req_pkt.data      <= 64'h5555_6666_7777_8888;
+    ai_if.req_pkt.burst_len <= 8;
+
+    repeat (3) @(posedge clk);
+
+    @(negedge clk);
+    release fabric_skid_if.req_ready;
+
+    do begin
+      @(posedge clk);
+    end while (!ai_if.req_ready);
+
+    @(negedge clk);
+    ai_if.req_valid <= 1'b0;
+
+    wait(ai_if.rsp_valid && ai_if.rsp_ready);
+
+    repeat (5) @(posedge clk);
 
     //-----------------------------------------
     // CODE COVERAGE TEST 1:
@@ -559,7 +726,7 @@ module top_tb;
     release mem_if.wr_ready;
 
     repeat (10) @(posedge clk);
- 
+
 
     //-----------------------------------------
     // CODE COVERAGE TEST 2B:
@@ -804,6 +971,10 @@ module top_tb;
     );
 
     repeat (20) @(posedge clk);
+
+    // Final self-check: no mismatches, no orphaned expected responses,
+    // and both READ/WRITE traffic observed from every master.
+    u_benoc_scoreboard.final_check();
 
     u_benoc_perf_monitor.print_report();
 

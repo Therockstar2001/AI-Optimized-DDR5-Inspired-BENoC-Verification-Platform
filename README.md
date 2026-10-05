@@ -3,7 +3,7 @@
 # Overview
 
 Modern AI accelerators, CPUs, and high-bandwidth DMA engines place increasing pressure on on-chip interconnects and memory subsystems. As compute density continues to grow, memory bandwidth, latency, congestion management, and traffic prioritization become critical system-level design challenges.
-This project implements and verifies a 64-bit DDR5-inspired memory subsystem connected through a BENoC (Bus Enhanced Network-on-Chip) fabric capable of servicing multiple traffic sources simultaneously. The platform models realistic SoC traffic scenarios involving CPU, AI accelerator, DMA, and Debug masters while validating arbitration behavior, memory transactions, backpressure handling, protocol correctness, and end-to-end data integrity.
+This project implements and verifies a 64-bit DDR5-inspired memory subsystem connected through a BENoC (Bus Enhanced Network-on-Chip) fabric that arbitrates requests from four traffic sources: CPU, AI accelerator, DMA, and Debug. The platform models realistic SoC traffic scenarios involving CPU, AI accelerator, DMA, and Debug masters while validating arbitration behavior, memory transactions, backpressure handling, protocol correctness, and end-to-end data integrity.
 The project was developed with a strong emphasis on Design Verification methodology, coverage-driven verification, assertion-based verification, protocol checking, and verification analytics rather than purely RTL functionality.
 ________________________________________
 # Problem Statement
@@ -50,7 +50,9 @@ Figure 2. DDR controller finite-state machine showing IDLE, READ_CMD, WRITE, WAI
 
 ## Functional Coverage Architecture
 
-The verification environment implements coverage-driven verification to track arbitration behavior, source traffic distribution, destination routing, burst-length patterns, and DDR transaction activity.
+The verification environment uses functional coverage to measure selected transaction and protocol scenarios. The current covergroup contains 11 bins covering CPU read/write commands, AI QoS values, CPU burst-length metadata ranges, CPU address regions, and CPU response observation.
+
+All 11 defined functional coverage bins are exercised by the regression, resulting in 100% functional coverage for the implemented coverage model.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0ce902e5-20c7-489a-a730-73d97079eea2" alt="Coverage Architecture" width="900">
@@ -98,11 +100,13 @@ Supported functionality:
 *	64-bit data path
 *	Read transactions
 *	Write transactions
-*	Burst-length support
-*	Command scheduling
+*	Burst-length metadata propagation
+*	FSM-based Command scheduling
 *	Response generation
 *	Transaction buffering
 The controller focuses on memory command sequencing and transaction management rather than complete JEDEC DDR5 compliance.
+
+The current datapath transfers one 64-bit data beat per request. The burst-length field is propagated through the request path and exercised by verification, but true multi-beat burst execution is not currently implemented.
 ________________________________________
 # CRC Protection Layer
 
@@ -116,7 +120,7 @@ The verification environment intentionally injects CRC failures to ensure proper
 ________________________________________
 # Memory Model
 
-A cycle-accurate memory model was developed to support:
+A behavioral 64-bit memory model was developed to support:
 *	Read storage
 *	Write storage
 *	Address validation
@@ -138,14 +142,27 @@ Verification infrastructure includes:
 ________________________________________
 # Scoreboard Architecture
 
-A transaction-level scoreboard validates:
-*	Address correctness
-*	Data integrity
-*	Read responses
-*	Write completion
-*	Ordering rules
-*	CRC behavior
-Expected transactions are compared against actual DUT behavior to detect mismatches.
+A generalized transaction-level scoreboard provides end-to-end checking across all four BENoC masters:
+
+* CPU
+* AI Accelerator
+* DMA Engine
+* Debug Interface
+
+The scoreboard maintains a shared reference-memory model representing the common memory accessed by all four masters. Accepted requests are tracked independently for each source using expected-response queues.
+
+The scoreboard validates:
+* Read-data correctness
+* Write completion
+* Request/response matching
+* Source-ID correctness
+* Response error status
+* Arbitrary memory addresses
+* In-range and out-of-range memory behavior
+* Cross-master write/readback behavior
+* Pending-transaction completion at the end of simulation
+
+The final 4-master regression checked 104 responses with zero scoreboard mismatches and zero pending transactions.
 ________________________________________
 # Assertion-Based Verification
 
@@ -163,18 +180,26 @@ Results:
 ________________________________________
 # Coverage Strategy
 
-Coverage closure was performed using a combination of directed and constrained-random testing.
+Coverage closure was performed using directed and constrained-random testing.
 
 Coverage categories:
 
-Functional Coverage
-*	All masters exercised
-*	All QoS levels exercised
-*	Read/write combinations
-*	Backpressure scenarios
-*	Arbitration contention
-*	CRC error cases
-*	Memory access patterns
+Functional Coverage Model:
+* CPU read/write commands
+* AI QoS metadata
+* CPU burst-length metadata ranges
+* CPU address regions
+* CPU response observation
+
+Regression Scenarios:
+* Traffic from CPU, AI, DMA, and Debug masters
+* Read and write transactions
+* Multi-master contention
+* Backpressure scenarios
+* CRC fault injection
+* Cross-master write/readback
+* In-range and out-of-range accesses
+* Memory data-pattern testing
 
 Assertion Coverage
 *	Protocol properties
@@ -224,7 +249,7 @@ Used patterns such as:
 *	Alternating bit patterns
 *	Randomized payloads
 
-Burst-length Testing
+Burst-length Metadata Testing
 
 Validated:
 *	Small burst-length
@@ -263,33 +288,36 @@ This functionality was not part of the original project scope but was added to p
 ________________________________________
 # Verification Results
 
-Final verification results:
-*	Functional Coverage: 100%
-*	Assertion Coverage: 100%
-*	Code Coverage: ~90%
-*	CRC Verification: PASS
-*	Scoreboard Verification: PASS
-*	Data Integrity Validation: PASS
-*	Backpressure Verification: PASS
-*	QoS Traffic Coverage: PASS
+Final regression results:
+* Functional Coverage: 100% (11/11 defined covergroup bins)
+* Assertion Coverage: 100% (8/8 BENoC assertions exercised with zero failures)
+* 4-Master Scoreboard Verification: PASS
+* Checked Scoreboard Responses: 104
+* Scoreboard Mismatches: 0
+* Pending Transactions at Completion: 0
+* CRC Fault Detection: PASS
+* Data Integrity Verification: PASS
+* Backpressure Verification: PASS
+* Cross-Master Readback Verification: PASS
+* QoS Metadata Traffic Testing: PASS
 
 ```
 # ===============================================
-#  BeNoC PERFORMANCE REPORT
+#  BENoC PERFORMANCE REPORT
 # ===============================================
-#  Total cycles         = 211
-#  CPU requests         = 14
-#  AI requests          = 15
-#  Total requests       = 29
-#  DDR write commands   = 28
-#  DDR read commands    = 1
-#  Responses            = 29
-#  Stall cycles         = 1
-#  Request throughput   = 0.137441 req/cycle
-#  Avg CPU latency      = 3.142857 cycles
+#  Total cycles         = 801
+#  CPU requests         = 37
+#  AI requests          = 21
+#  CPU+AI requests      = 58
+#  DDR write commands   = 93
+#  DDR read commands    = 13
+#  CPU+AI responses     = 58
+#  Stall cycles         = 4
+#  Request throughput   = 0.072409 req/cycle
+#  Avg CPU latency      = 3.567568 cycles
 #  Max CPU latency      = 5 cycles
 #  Min CPU latency      = 3 cycles
-#  Latency samples      = 14
+#  Latency samples      = 37
 # ===============================================
 ```
 ________________________________________
@@ -351,6 +379,20 @@ QoS-Aware Arbitration
 
 Multi-Beat Burst Support
 * Extend burst-length metadata into true multi-beat INCR transactions using beat counters, address progression, repeated data handshakes, final-beat tracking, and burst-aware scoreboarding.
+
+CRC Error Containment
+* Suppress or invalidate writes when integrity checking fails
+* Propagate integrity failures through the BENoC response error field
+* Define retry, drop, or recovery behavior
+
+Expanded Functional Coverage
+* Per-master read/write coverpoints
+* Source × command cross coverage
+* Source × QoS cross coverage
+* Arbitration-order coverage
+* Backpressure cross coverage
+* CRC pass/fail coverage
+* Cross-master memory-access coverage
 ________________________________________
 # Conclusion
 

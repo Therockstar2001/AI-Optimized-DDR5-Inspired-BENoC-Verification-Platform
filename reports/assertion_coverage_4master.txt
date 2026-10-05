@@ -1,0 +1,86 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top_tb/u_benoc_assertions
+=== Design Unit: work.benoc_assertions
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       8         8         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/u_benoc_assertions/assert__p_fabric_req_eventual_ddr_accept
+                     ../sva/benoc_assertions.sv(102)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(98)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(94)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_skid_valid_forward
+                     ../sva/benoc_assertions.sv(65)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_pkt_stable
+                     ../sva/benoc_assertions.sv(52)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_pkt_stable
+                     ../sva/benoc_assertions.sv(43)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_valid_hold
+                     ../sva/benoc_assertions.sv(30)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_valid_hold
+                     ../sva/benoc_assertions.sv(21)
+                                                        0          1
+
+=================================================================================
+=== Instance: /top_tb
+=== Design Unit: work.top_tb
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/#ublk#129394338#533/immed__536
+                     ../tb/top_tb.sv(536)               0          1
+
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass
+                                                  Count        Count
+--------------------------------------------------------------------
+/top_tb/#ublk#129394338#533/immed__536
+                     ../tb/top_tb.sv(536)               0          1
+/top_tb/u_benoc_assertions/assert__p_fabric_req_eventual_ddr_accept
+                     ../sva/benoc_assertions.sv(102)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(98)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_req_eventual_rsp
+                     ../sva/benoc_assertions.sv(94)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_skid_valid_forward
+                     ../sva/benoc_assertions.sv(65)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_pkt_stable
+                     ../sva/benoc_assertions.sv(52)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_pkt_stable
+                     ../sva/benoc_assertions.sv(43)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_ai_valid_hold
+                     ../sva/benoc_assertions.sv(30)
+                                                        0          1
+/top_tb/u_benoc_assertions/assert__p_cpu_valid_hold
+                     ../sva/benoc_assertions.sv(21)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 100.00%

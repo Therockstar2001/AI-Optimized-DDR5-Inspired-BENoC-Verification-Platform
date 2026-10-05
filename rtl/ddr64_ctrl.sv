@@ -112,7 +112,9 @@ module ddr64_ctrl (
       S_READ_WAIT: begin
         ddr.rd_ready = 1'b1;
 
-        if (ddr.rd_valid)
+        // Advance only when the read-data handshake actually completes.
+        // The sequential block captures read_data_q on the same condition.
+        if (ddr.rd_valid && ddr.rd_ready)
           next_state = S_RESP;
       end
 
